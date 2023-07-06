@@ -30,8 +30,32 @@ def upgrade():
 
     game['tool'] += 1 
 
+def stats():
+    tool = tools[game['tool']]
+    print(f'You have {gmae['money']} and are using a {tool['name']}')
+
 def user_win():
     if (game['tool'] == 4 and game['money'] >= 1000):
         print('you have won!')
         return True
     return False
+
+while(True):
+    i = input('[1] Mow Lawn [2] Check Stats [3] Upgrade [Q] Quit')
+    i = int(i)
+
+    if (i == 1):
+        cut_lawn()
+
+    if (i == 2):
+        stats()
+
+    if (i == 3):
+        upgrade()
+
+    if (i == Q):
+        print('Game Over')
+        break
+    
+    if (user_win()):
+        break
